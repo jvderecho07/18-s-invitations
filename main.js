@@ -1,0 +1,264 @@
+// ── MUSIC ──
+var music    = document.getElementById('bg-music');
+var musicBtn = document.getElementById('music-btn');
+var iconOn   = document.getElementById('music-icon-on');
+var iconOff  = document.getElementById('music-icon-off');
+
+function setPlaying(playing) {
+  if (playing) {
+    iconOn.style.display  = '';
+    iconOff.style.display = 'none';
+    musicBtn.classList.add('playing');
+  } else {
+    iconOn.style.display  = 'none';
+    iconOff.style.display = '';
+    musicBtn.classList.remove('playing');
+  }
+}
+
+// Attempt autoplay on load
+music.volume = 0.5;
+var autoplayPromise = music.play();
+if (autoplayPromise !== undefined) {
+  autoplayPromise
+    .then(function() { setPlaying(true); })
+    .catch(function() {
+      // Autoplay blocked — wait for first user interaction
+      setPlaying(false);
+      document.addEventListener('click', function tryPlay() {
+        music.play().then(function() { setPlaying(true); });
+        document.removeEventListener('click', tryPlay);
+      }, { once: true });
+    });
+}
+
+// Toggle on button click
+musicBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  if (music.paused) {
+    music.play().then(function() { setPlaying(true); });
+  } else {
+    music.pause();
+    setPlaying(false);
+  }
+});
+
+//PARTICLESSS
+const container = document.getElementById('particles');
+for (let i = 0; i < 40; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `
+    left: ${Math.random() * 100}%;
+    --dur: ${6 + Math.random() * 10}s;
+    --delay: ${Math.random() * 10}s;
+    width: ${6 + Math.random() * 8}px;
+    height: ${6 + Math.random() * 8}px;
+    opacity: 0;
+  `;
+  container.appendChild(p);
+}
+
+// COUNTDOWNESS
+var countdownTimer;
+function updateCountdown() {
+  var target = new Date('2026-05-24T18:00:00');
+  var now    = new Date();
+  var diff   = target - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent  = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent  = '00';
+    document.getElementById('cd-secs').textContent  = '00';
+    clearInterval(countdownTimer);
+    return;
+  }
+
+  var days  = Math.floor(diff / 86400000);
+  var hours = Math.floor((diff % 86400000) / 3600000);
+  var mins  = Math.floor((diff % 3600000)  / 60000);
+  var secs  = Math.floor((diff % 60000)    / 1000);
+
+  document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+}
+updateCountdown();
+countdownTimer = setInterval(updateCountdown, 1000);
+
+//SCROLLERSS
+const revealObserver = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(function (el) {
+  revealObserver.observe(el);
+});
+
+// ── NAMES MODAL ──
+var modalData = {
+  candles: {
+    label: '18 Candles',
+    names: [
+      'Lola Evalyn Zuniega',
+      'Maria Aly Loneza',
+      'Ate Elizah Marie Zuniega',
+      'Ate Marial Angel Zuniega',
+      'Ate Mia Amor',
+      'Alyana Joy Fernandez',
+      'Abigail Magno',
+      'Vanie Bazar',
+      'Twiggy Mandella',
+      'Kimberly Saluya',
+      'Lindsay Galicia',
+      'Ate Ilyn Orticio',
+      'Ate Riza Mae Mirandilla',
+      'Ate Therese Mirandilla',
+      'Ate Mariam Felice Arroco',
+      'Newzant De Guzman',
+      'Mary Kristin Louis Arcos',
+      'Allyn Loneza (Mother)'
+    ]
+  },
+  flowers: {
+    label: '18 Flowers',
+    names: [
+      'Mateo Al Roger Loneza',
+      'Ryl Adrino',
+      'Kuya James Derecho',
+      'Kuya Jeunir Zuniega',
+      'Kuya Jesvir Zuniega',
+      'Kuya Romulo Ray Balisnomo',
+      'Iellyx Martin',
+      'Pax Perol',
+      'Dominic Bajamundi',
+      'Ceriaco Nidea',
+      'Andrei Baylon',
+      'Khen Lominario',
+      'Rayver Perina',
+      'Joseph Llamera',
+      'Justin Arroco',
+      'Daniel Arroco',
+      'Francis Isles',
+      'Rogelio Loneza Jr. (Father)'
+    ]
+  },
+  treasures: {
+    label: '18 Treasures',
+    names: [
+      'Hanicah / Yaco',
+      'Rhianna Isabel Alfonso',
+      'Cass / Yllelix',
+      'Twiggy Madella',
+      'Kimberly Saluya',
+      'Nikka Dela Rama',
+      'Ate Hazel Brosas',
+      'Maria Antares Mikaela Ogayon',
+      'Vanie Bazar',
+      'Manu Andi Sapaula',
+      'Shiela Lotivio',
+      'Danielle Fay Marin',
+      'Alyana Fernandez',
+      'Abigail Magno',
+      'Mia Amor',
+      'Paula Sotto',
+      'Mary Kristin Arcos',
+      'Newzant Zebdee De Guzman'
+    ]
+  },
+  bluebills: {
+    label: '18 Blue Bills',
+    names: [
+      'Kuya Jesvir Zuniega',
+      'Ate Elizah Marie Zuniega',
+      'Kuya Jeunir Zuniega',
+      'Tita Myla and Uncle Joseph Deretcho',
+      'Tita Lilet Abogado',
+      'Tita Lorabelle Pura',
+      'Uncle Alvin and Tita Mafi Zuniega',
+      'Tita Marisol Montalban',
+      'Tita Anji Montalban',
+      'Ninang May Annie Razon',
+      'Tita Bem Dia',
+      'Tita Merli Ann Casile',
+      'Tita June Villavicencio',
+      'Tita Lovely Buisa-Adrino',
+      'Ninang Ivy Venofra',
+      'Ninong Joey and Ninang Joy',
+      'Ninong Luke Arroyo',
+      'Ninang Mayen Maria'
+    ]
+  },
+  shots: {
+    label: '18 Shots',
+    names: [
+      'Marial Zuniega',
+      'Jesvir Zuniega',
+      'Jeunir Zuniega',
+      'James Derecho',
+      'Vanie Bazar',
+      'Santi Espares',
+      'Andrei Baylon',
+      'Rayver Perina',
+      'Joseph Llamera',
+      'Paxpenh Perol',
+      'Khen Lominario',
+      'Mary Kristin Arcos',
+      'Kuya Nilo Jae Mirandilla',
+      'Kuya Daniel Zymon Arroco',
+      'Ate Mariam Felice Arroco',
+      'Ate Therese Mirandilla',
+      'Ate Riza Mae Mirandilla',
+      'Ate Mia Amor'
+    ]
+  }
+};
+
+var modal        = document.getElementById('names-modal');
+var modalTitle   = document.getElementById('modal-title');
+var modalLabel   = document.getElementById('modal-label');
+var modalNames   = document.getElementById('modal-names');
+var modalCloseBtn = document.getElementById('modal-close-btn');
+
+function openModal(key) {
+  var data = modalData[key];
+  if (!data) return;
+  modalLabel.textContent = 'Evening Program';
+  modalTitle.textContent = data.label;
+  modalNames.innerHTML = '';
+  data.names.forEach(function(name, i) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="modal-num">' + String(i + 1).padStart(2, '0') + '</span>' + name;
+    modalNames.appendChild(li);
+  });
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.timeline-clickable').forEach(function(el) {
+  el.addEventListener('click', function() {
+    openModal(el.getAttribute('data-modal'));
+  });
+});
+
+modalCloseBtn.addEventListener('click', closeModal);
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});

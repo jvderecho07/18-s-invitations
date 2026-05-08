@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maria Gerally's 18th Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<audio id="bg-music" loop>
+  <source src="song.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- Music toggle button -->
+<button id="music-btn" aria-label="Toggle music" title="Toggle music">
+  <svg id="music-icon-on" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+  </svg>
+  <svg id="music-icon-off" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <path d="M4.27 3 3 4.27l9 9V17a4 4 0 1 0 2 3.55V15.27l5.73 5.73L21 19.73 4.27 3zM14 7h4V3h-6v5.18L14 10.4V7z"/>
+  </svg>
+</button>
+
+<!--Particles -->
+<div id="particles"></div>
+<!--HERONESS-->
+<section id="hero">
+  <div id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-pre">You are cordially invited to celebrate</p>
+    <h1 class="hero-name">Maria Gerally</h1>
+    <p class="hero-turns">Turns</p>
+    <div class="hero-eighteen">18</div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="hero-date">May 24, 2026 &nbsp;·&nbsp; Sunday</p>
+    <p class="hero-venue">De Mansion Events Place</p>
+    <p class="hero-time">6:00 PM — 10:00 PM</p>
+    <div class="hero-btns">
+      <a class="location-btn"
+         href="https://www.google.com/maps/place/De+Mansion+Events+Place/@13.1763732,123.7486841,17z/data=!3m1!4b1!4m6!3m5!1s0x33a10185b8447379:0x875aec2277e74625!8m2!3d13.176368!4d123.751259!16s%2Fg%2F11t7ts5xy9"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+        </svg>
+        View Location
+      </a>
+      <a class="rsvp-btn"
+         href="https://forms.gle/FgqQ1y33owxJsNbT6"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        RSVP Now
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+<!--COUNTDOWNESS-->
+<section id="countdown">
+  <div class="section-inner">
+    <p class="section-label">Counting down to</p>
+    <h2 class="section-title">The Grand Celebration</h2>
+    <div class="countdown-grid">
+      <div class="countdown-box">
+        <div class="countdown-num" id="cd-days">00</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-box">
+        <div class="countdown-num" id="cd-hours">00</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-box">
+        <div class="countdown-num" id="cd-mins">00</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-box">
+        <div class="countdown-num" id="cd-secs">00</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--PROGRAM-->
+<section id="program">
+  <div class="section-inner reveal">
+    <p class="section-label">Evening Program</p>
+    <h2 class="section-title">The Night's Highlights</h2>
+    <div class="gold-line"></div>
+    <div class="program-timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <div class="timeline-name">Opening Ceremony</div>
+          <div class="timeline-desc">A grand welcome to the night's celebration</div>
+        </div>
+        <div class="timeline-num">01</div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-num">02</div>
+        <div class="timeline-body">
+          <div class="timeline-name">Cotillion de Honor</div>
+          <div class="timeline-desc">An elegant dance of grace and beauty</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-body timeline-clickable" data-modal="candles">
+          <div class="timeline-name">18 Candles</div>
+          <div class="timeline-desc">Lights that guide her path ahead</div>
+          <div class="timeline-view-list">View List <span>✦</span></div>
+        </div>
+        <div class="timeline-num">03</div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-num">04</div>
+        <div class="timeline-body timeline-clickable" data-modal="flowers">
+          <div class="timeline-name">18 Flowers</div>
+          <div class="timeline-desc">Gentlemen who hold a special place in her heart</div>
+          <div class="timeline-view-list">View List <span>✦</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <div class="timeline-name">Dinner</div>
+          <div class="timeline-desc">A feast shared with family and friends</div>
+        </div>
+        <div class="timeline-num">05</div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-num">06</div>
+        <div class="timeline-body timeline-clickable" data-modal="treasures">
+          <div class="timeline-name">18 Treasures</div>
+          <div class="timeline-desc">Gifts of wisdom and love</div>
+          <div class="timeline-view-list">View List <span>✦</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-body timeline-clickable" data-modal="bluebills">
+          <div class="timeline-name">18 Blue Bills</div>
+          <div class="timeline-desc">Blessings of prosperity and abundance</div>
+          <div class="timeline-view-list">View List <span>✦</span></div>
+        </div>
+        <div class="timeline-num">07</div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-spacer"></div>
+        <div class="timeline-num">08</div>
+        <div class="timeline-body timeline-clickable" data-modal="shots">
+          <div class="timeline-name">18 Shots</div>
+          <div class="timeline-desc">A toast to her beautiful journey</div>
+          <div class="timeline-view-list">View List <span>✦</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-body">
+          <div class="timeline-name">Closing Ceremony</div>
+          <div class="timeline-desc">A heartfelt farewell to an unforgettable evening</div>
+        </div>
+        <div class="timeline-num">09</div>
+        <div class="timeline-spacer"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--GUEST COLOR GUIDE -->
+<section id="dress-guide">
+  <div class="section-inner reveal">
+    <p class="section-label">Dress to Impress</p>
+    <h2 class="section-title">Guest Color Guide &amp; Dress Type</h2>
+    <div class="gold-line"></div>
+    <div class="dress-guide-box">
+
+      <!-- ATTIRE ROW -->
+      <div class="dress-attire-row">
+        <div class="dress-category-title" style="margin-bottom:0;">Attire</div>
+        <span class="dress-attire-type">Formal / Semi-Formal</span>
+      </div>
+
+      <div class="dress-divider"></div>
+
+      <!-- TWO COLUMNS -->
+      <div class="dress-columns">
+
+        <!-- LEFT: FAMILY -->
+        <div class="dress-col">
+          <div class="dress-category-title">Family</div>
+          <div class="dress-gender-block">
+            <div class="dress-gender-label">Gentlemen</div>
+            <div class="dress-circle" style="background:#1a2f5e;"></div>
+            <div class="dress-color-name">Navy Blue</div>
+          </div>
+          <div class="dress-gender-block">
+            <div class="dress-gender-label">Ladies</div>
+            <div class="dress-circle" style="background:#2e1a47;"></div>
+            <div class="dress-color-name">Midnight Purple</div>
+          </div>
+        </div>
+
+        <div class="dress-col-divider"></div>
+
+        <!-- RIGHT: GUESTS -->
+        <div class="dress-col">
+          <div class="dress-category-title">Other Guests</div>
+          <div class="dress-gender-block">
+            <div class="dress-gender-label">Gentlemen</div>
+            <div class="dress-circle" style="background:#6fa8d6;"></div>
+            <div class="dress-color-name">Light Blue</div>
+          </div>
+          <div class="dress-gender-block">
+            <div class="dress-gender-label">Ladies</div>
+            <div class="dress-swatches-row">
+              <div class="dress-circle-group">
+                <div class="dress-circle" style="background:#f7e7ce;border:1px solid rgba(201,168,76,0.4);"></div>
+                <div class="dress-color-name">Champagne</div>
+              </div>
+              <div class="dress-circle-group">
+                <div class="dress-circle" style="background:#d4b896;border:1px solid rgba(201,168,76,0.3);"></div>
+                <div class="dress-color-name">Beige</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--REMINDER-->
+<section id="reminder">
+  <div class="section-inner reveal">
+    <div class="reminder-box">
+      <p class="reminder-label">Friendly Reminder</p>
+      <h2 class="reminder-title">The Celebration Begins at 6:00 PM</h2>
+      <div class="event-line" style="margin: 20px auto;"></div>
+      <p class="reminder-desc">
+        Kindly be seated by <strong style="color:var(--gold)">6:00 PM sharp</strong> on
+        <strong style="color:var(--gold)">May 24, 2026</strong> at
+        De Mansion Events Place. Your presence on time means the world to us.
+      </p>
+      <div class="reminder-badge">✦ &nbsp; Please Be On Time &nbsp; ✦</div>
+    </div>
+  </div>
+</section>
+
+<!--FOOTER-->
+<footer>
+  <div class="footer-name">Maria Gerally</div>
+  <p>Turning 18 &nbsp;·&nbsp; May 24, 2026</p>
+  <br/>
+  <p style="font-size: 0.65rem; opacity: 0.3;">With love ✦</p>
+</footer>
+<!-- NAMES MODAL -->
+<div id="names-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>
+    <div class="modal-header">
+      <p class="modal-label" id="modal-label">Evening Program</p>
+      <h3 class="modal-title" id="modal-title">18 Candles</h3>
+      <div class="modal-gold-line"></div>
+    </div>
+    <ul class="modal-names" id="modal-names"></ul>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
