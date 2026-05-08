@@ -443,27 +443,55 @@ section {
 
 /* ── Collapse to single-column on mobile ── */
 @media (max-width: 600px) {
-  .program-timeline::before { left: 18px; transform: none; }
+  /* Shift vertical line to the left edge */
+  .program-timeline::before {
+    left: 17px;
+    transform: none;
+  }
+
+  /* All items: circle col | content col */
   .timeline-item {
     grid-template-columns: 36px 1fr;
-    gap: 14px;
+    grid-template-rows: auto;
+    align-items: start;
+    gap: 0 12px;
+    padding: 10px 0;
   }
-  .timeline-item:nth-child(odd) .timeline-body,
-  .timeline-item:nth-child(even) .timeline-body {
-    grid-column: 2;
-    text-align: left;
-  }
+
+  /* Force every num into column 1, row 1 */
   .timeline-item:nth-child(odd) .timeline-num,
   .timeline-item:nth-child(even) .timeline-num {
     grid-column: 1;
+    grid-row: 1;
     width: 36px;
     height: 36px;
     font-size: 0.65rem;
+    justify-self: center;
+    margin-top: 4px;
   }
-  .timeline-spacer { display: none; }
+
+  /* Force every body into column 2, row 1 */
+  .timeline-item:nth-child(odd) .timeline-body,
+  .timeline-item:nth-child(even) .timeline-body {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Hide spacers entirely */
+  .timeline-spacer { display: none !important; }
+
+  /* Remove desktop connector pseudo-elements */
+  .timeline-item:nth-child(odd) .timeline-num::before,
+  .timeline-item:nth-child(even) .timeline-num::after {
+    display: none;
+  }
+
+  /* Uniform hover direction */
   .timeline-item:nth-child(odd) .timeline-body:hover,
   .timeline-item:nth-child(even) .timeline-body:hover {
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
 }
 
@@ -509,8 +537,8 @@ section {
 .dress-col { display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
 .dress-gender-block { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
 .dress-circle {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.15);
   flex-shrink: 0;
@@ -704,7 +732,7 @@ section {
 }
 
 @media (max-width: 480px) {
-  .reminder-box { padding: 30px 20px; }
+  .reminder-box { padding: 28px 18px; }
 }
 
 /*FOOTER*/
@@ -783,118 +811,184 @@ footer p {
   transform: translateY(0);
 }
 
+/* ── REMINDER event-line ── */
+.event-line {
+  width: 60px;
+  height: 1px;
+  background: rgba(201,168,76,0.4);
+  margin: 0 auto;
+}
+
 /*RESPONSIVE*/
+
+/* ── Tablet / large phone (≤ 768px) ── */
 @media (max-width: 768px) {
-  section { 
-    padding: 60px 16px; }
+  section {
+    padding: 60px 16px;
+  }
 
   /* Hero */
-  #hero { 
-    padding: 60px 16px 80px; }
-  .hero-pre { 
-    letter-spacing: 0.2em; }
-  .hero-turns { 
-    letter-spacing: 0.3em; }
-  .divider { 
-    margin: 18px auto; }
+  #hero {
+    padding: 60px 16px 80px;
+  }
+  .hero-pre {
+    letter-spacing: 0.2em;
+  }
+  .hero-turns {
+    letter-spacing: 0.3em;
+  }
+  .divider {
+    margin: 18px auto;
+  }
+
   /* Countdown */
-  #countdown { 
-    padding: 60px 16px; }
-  .countdown-grid { 
-    gap: 10px; }
+  #countdown {
+    padding: 60px 16px;
+  }
+  .countdown-grid {
+    gap: 10px;
+  }
   .countdown-num {
     width: clamp(70px, 18vw, 100px);
     height: clamp(70px, 18vw, 100px);
   }
-  /* Program timeline */
-  .timeline-num { width: 38px; height: 38px; font-size: 0.65rem; }
-  .timeline-body { padding: 12px 16px; }  /* Dress guide */
-  .dress-guide-box { 
-    padding: 28px 20px; }
-  /* Footer */
-  footer { 
-    padding: 40px 16px; }
-}
-@media (max-width: 480px) {
 
-  .countdown-sep { 
-    display: none; }
-  .hero-btns { 
+  /* Program timeline */
+  .timeline-num  { width: 38px; height: 38px; font-size: 0.65rem; }
+  .timeline-body { padding: 12px 16px; }
+
+  /* Dress guide */
+  .dress-guide-box {
+    padding: 28px 20px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 16px;
+  }
+}
+
+/* ── Small phone (≤ 480px) ── */
+@media (max-width: 480px) {
+  /* Countdown separators hidden; grid becomes 2×2 */
+  .countdown-sep {
+    display: none;
+  }
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-items: center;
+  }
+
+  /* Hero buttons stack */
+  .hero-btns {
     flex-direction: column;
-    align-items: center; }
-  .location-btn,.rsvp-btn {
+    align-items: center;
+  }
+  .location-btn,
+  .rsvp-btn {
     width: 100%;
     max-width: 280px;
     justify-content: center;
     padding: 14px 20px;
+    /* Larger touch target */
+    min-height: 48px;
   }
+
   /* Hero text tightening */
-  .hero-pre { 
-    font-size: 0.75rem; 
-    letter-spacing: 0.15em; }
-  .hero-date { 
-    letter-spacing: 0.15em; }
-  .hero-time { 
-    letter-spacing: 0.1em; }
-  /* Countdown boxes*/
-  .countdown-grid { 
-    gap: 8px; }
-  .countdown-box { 
-    min-width: 70px; }
+  .hero-pre  { font-size: 0.75rem; letter-spacing: 0.15em; }
+  .hero-date { letter-spacing: 0.15em; }
+  .hero-time { letter-spacing: 0.1em; }
+
+  /* Countdown boxes */
+  .countdown-box {
+    min-width: 0;
+    width: 100%;
+  }
   .countdown-num {
-    width: clamp(64px, 20vw, 90px);
+    width: 100%;
     height: clamp(64px, 20vw, 90px);
     font-size: clamp(1.8rem, 8vw, 2.8rem);
   }
-  .countdown-label { 
-    font-size: 0.6rem; 
-    letter-spacing: 0.2em; }
+  .countdown-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
 
-  /* Program timeline */
-  .program-timeline::before { left: 18px; }
-  .timeline-num { width: 36px; height: 36px; font-size: 0.6rem; }
+  /* Program timeline — fine-tune sizes at 480px (layout already set at 600px) */
+  .timeline-num  { width: 32px; height: 32px; font-size: 0.6rem; }
   .timeline-body { padding: 10px 12px; }
   .timeline-name { font-size: 0.72rem; letter-spacing: 0.1em; }
   .timeline-desc { font-size: 0.8rem; }
 
   /* Dress guide */
-  .dress-guide-box { 
-    padding: 20px 14px; }
-  .color-swatch-row { 
-    gap: 6px; }
-  .color-swatch { 
-    padding: 4px 8px; 
-    font-size: 0.6rem; }
+  .dress-guide-box  { padding: 20px 14px; }
+  .color-swatch-row { gap: 6px; }
+  .color-swatch     { padding: 4px 8px; font-size: 0.6rem; }
 
   /* Section headings */
-  .section-title { 
-    letter-spacing: 0.08em; }
+  .section-title { letter-spacing: 0.08em; }
+
+  /* Reminder */
+  .reminder-badge {
+    padding: 10px 16px;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Music button — move slightly inward so it doesn't clip */
+  #music-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
 
   /* Footer */
-  footer p { 
-    letter-spacing: 0.15em; 
-    font-size: 0.72rem; }
+  footer p { letter-spacing: 0.15em; font-size: 0.72rem; }
 }
+
+/* ── Very small phone (≤ 360px) ── */
 @media (max-width: 360px) {
-  .hero-name { 
-    font-size: clamp(2.8rem, 12vw, 4rem); }
-  .hero-eighteen { 
-    font-size: clamp(3.2rem, 16vw, 5rem); }
+  .hero-name    { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .hero-eighteen { font-size: clamp(3.2rem, 16vw, 5rem); }
+
   .countdown-num {
-    width: 58px;
     height: 58px;
     font-size: 1.6rem;
   }
-  .event-title { 
-    font-size: clamp(1.3rem, 6vw, 1.8rem); }
-  .event-badge { 
-    padding: 10px 12px; font-size: 0.6rem; }
+
+  .reminder-box { padding: 24px 14px; }
 }
+
+/* ── Landscape phones (short viewport) ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero {
+    min-height: auto;
+    padding: 40px 20px 60px;
+  }
+  .hero-name    { font-size: clamp(2.5rem, 8vw, 4rem); }
+  .hero-eighteen { font-size: clamp(3rem, 10vw, 5rem); }
+  .divider      { margin: 12px auto; }
+  .scroll-hint  { display: none; }
+
+  .countdown-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .countdown-sep { display: flex; }
+  .countdown-num {
+    width: clamp(56px, 12vw, 80px);
+    height: clamp(56px, 12vw, 80px);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+  }
+}
+
+/* ── Large desktop (≥ 1200px) ── */
 @media (min-width: 1200px) {
-  .section-inner { 
-    max-width: 1000px; }
-  .event-desc { 
-    max-width: 700px; }
+  .section-inner   { max-width: 1000px; }
   .program-timeline { max-width: 800px; }
 }
 
