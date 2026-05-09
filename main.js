@@ -62,7 +62,7 @@ for (let i = 0; i < 40; i++) {
 // COUNTDOWNESS
 var countdownTimer;
 function updateCountdown() {
-  var target = new Date('2026-05-24T18:00:00');
+  var target = new Date('2026-05-24T17:30:00');
   var now    = new Date();
   var diff   = target - now;
 
@@ -107,21 +107,21 @@ var modalData = {
   candles: {
     label: '18 Candles',
     names: [
-      'Lola Evalyn Zuniega',
+      'Evalyn Zuniega',
       'Maria Aly Roge Loneza',
       'Elizah Marie Zuniega',
       'Marial Angel Zuniega',
-      'Ate Mia Amor',
+      'Mia Amor',
       'Twiggy Mandella',
       'Kimberly Saluya',
       'Alyana Joy Fernandez',
-      'Abigail Magno',
       'Vanie Fe Bazar',
       'Lindsay Galicia',
-      'Ate Ilyn Orticio',
-      'Ate Riza Mae Mirandilla',
-      'Ate Therese Mirandilla',
-      'Ate Mariam Felice Arroco',
+      'Ilyn Orticio',
+      'Riza Mae Mirandilla',
+      'Therese Mirandilla',
+      'Mariam Felice Arroco',
+      'Paula Sotto',
       'Newzant De Guzman',
       'Mary Kristin Louis Arcos',
       'Allyn Loneza (Mother)'
@@ -176,24 +176,24 @@ var modalData = {
   bluebills: {
     label: '18 Blue Bills',
     names: [
-      'Kuya Jesvir Zuniega',
-      'Ate Elizah Marie Zuniega',
-      'Kuya Jeunir Zuniega',
-      'Tita Myla and Uncle Joseph Deretcho',
-      'Tita Lilet Abogado',
-      'Tita Lorabelle Pura',
-      'Uncle Alvin and Tita Mafi Zuniega',
-      'Tita Marisol Montalban',
-      'Tita Anji Montalban',
-      'Ninang May Annie Razon',
-      'Tita Bem Dia',
-      'Tita Merli Ann Casile',
-      'Tita June Villavicencio',
-      'Tita Lovely Buisa-Adrino',
-      'Ninang Ivy Venofra',
-      'Ninong Joey and Ninang Joy',
-      'Ninong Luke Arroyo',
-      'Ninang Mayen Mariaña'
+      'Jesvir Zuniega',
+      'Elizah Marie Zuniega',
+      'Jeunir Zuniega',
+      'Myla and Joseph Deretcho',
+      'Lilet Abogado',
+      'Lorabelle Pura',
+      'Alvin and Mafi Zuniega',
+      'Marisol Montalban',
+      'Anji Montalban',
+      'May Annie Razon',
+      'Bem Dia',
+      'Merli Ann Casile',
+      'June Villavicencio',
+      'Lovely Buisa-Adrino',
+      'Ivy Venofra',
+      'Joey and Ninang Joy',
+      'Luke Arroyo',
+      'Mayen Mariaña'
     ]
   },
   shots: {
@@ -210,13 +210,13 @@ var modalData = {
       'Paxpenh Perol',
       'Rayver Perina',
       'Joseph Llamera',
-      'Ate Mia Amor',
+      'Mia Amor',
       'Mary Kristin Arcos',
-      'Kuya Nilo Jae Mirandilla',
-      'Kuya Daniel Zymon Arroco',
-      'Ate Mariam Felice Arroco',
-      'Ate Therese Mirandilla',
-      'Ate Riza Mae Mirandilla'
+      'Nilo Jae Mirandilla',
+      'Daniel Zymon Arroco',
+      'Mariam Felice Arroco',
+      'Therese Mirandilla',
+      'Riza Mae Mirandilla'
     ]
   }
 };
