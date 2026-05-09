@@ -108,15 +108,15 @@ var modalData = {
     label: '18 Candles',
     names: [
       'Lola Evalyn Zuniega',
-      'Maria Aly Loneza',
-      'Ate Elizah Marie Zuniega',
-      'Ate Marial Angel Zuniega',
+      'Maria Aly Roge Loneza',
+      'Elizah Marie Zuniega',
+      'Marial Angel Zuniega',
       'Ate Mia Amor',
-      'Alyana Joy Fernandez',
-      'Abigail Magno',
-      'Vanie Bazar',
       'Twiggy Mandella',
       'Kimberly Saluya',
+      'Alyana Joy Fernandez',
+      'Abigail Magno',
+      'Vanie Fe Bazar',
       'Lindsay Galicia',
       'Ate Ilyn Orticio',
       'Ate Riza Mae Mirandilla',
@@ -130,12 +130,12 @@ var modalData = {
   flowers: {
     label: '18 Flowers',
     names: [
-      'Mateo Al Roger Loneza',
+      'Mateo Al Roger Z. Loneza',
       'Ryl Adrino',
-      'Kuya James Derecho',
-      'Kuya Jeunir Zuniega',
-      'Kuya Jesvir Zuniega',
-      'Kuya Romulo Ray Balisnomo',
+      'James Venedict Z. Derecho',
+      'Jeunir Zuniega',
+      'Jesvir Zuniega',
+      'Romulo Ray Balisnomo',
       'Iellyx Martin',
       'Pax Perol',
       'Dominic Bajamundi',
@@ -147,28 +147,28 @@ var modalData = {
       'Justin Arroco',
       'Daniel Arroco',
       'Francis Isles',
-      'Rogelio Loneza Jr. (Father)'
+      'Rogelio I. Loneza Jr. (Father)'
     ]
   },
   treasures: {
     label: '18 Treasures',
     names: [
-      'Hanicah / Yaco',
       'Rhianna Isabel Alfonso',
-      'Cass / Yllelix',
+      'Maria Cassandra Embudo',
       'Twiggy Madella',
       'Kimberly Saluya',
+      'Yllelix Martin',
       'Nikka Dela Rama',
-      'Ate Hazel Brosas',
       'Maria Antares Mikaela Ogayon',
-      'Vanie Bazar',
+      'Vanie Fe Bazar',
       'Manu Andi Sapaula',
       'Shiela Lotivio',
-      'Danielle Fay Marin',
       'Alyana Fernandez',
       'Abigail Magno',
-      'Mia Amor',
+      'Ate Hazel Brosas',
+      'Ate Mia Amor',
       'Paula Sotto',
+      'Danielle Fay Marin',
       'Mary Kristin Arcos',
       'Newzant Zebdee De Guzman'
     ]
@@ -193,7 +193,7 @@ var modalData = {
       'Ninang Ivy Venofra',
       'Ninong Joey and Ninang Joy',
       'Ninong Luke Arroyo',
-      'Ninang Mayen Maria'
+      'Ninang Mayen Mariaña'
     ]
   },
   shots: {
@@ -203,20 +203,20 @@ var modalData = {
       'Jesvir Zuniega',
       'Jeunir Zuniega',
       'James Derecho',
-      'Vanie Bazar',
+      'Khen Lominario',
+      'Vanie Fe Bazar',
       'Santi Espares',
       'Andrei Baylon',
+      'Paxpenh Perol',
       'Rayver Perina',
       'Joseph Llamera',
-      'Paxpenh Perol',
-      'Khen Lominario',
+      'Ate Mia Amor',
       'Mary Kristin Arcos',
       'Kuya Nilo Jae Mirandilla',
       'Kuya Daniel Zymon Arroco',
       'Ate Mariam Felice Arroco',
       'Ate Therese Mirandilla',
-      'Ate Riza Mae Mirandilla',
-      'Ate Mia Amor'
+      'Ate Riza Mae Mirandilla'
     ]
   }
 };

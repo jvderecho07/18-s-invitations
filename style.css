@@ -250,47 +250,44 @@ body {
   margin-bottom: 40px;
 }
 .countdown-grid {
-  display: flex;
-  gap: clamp(12px, 3vw, 30px);
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(8px, 2vw, 16px);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
 }
 .countdown-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  min-width: 80px;
+  gap: 10px;
 }
 .countdown-num {
   font-family: 'Cinzel', serif;
-  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 600;
   color: var(--gold);
   line-height: 1;
   text-shadow: 0 0 20px rgba(201,168,76,0.4);
   background: rgba(201,168,76,0.05);
   border: 1px solid rgba(201,168,76,0.2);
-  width: clamp(80px, 15vw, 110px);
-  height: clamp(80px, 15vw, 110px);
+  width: 100%;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .countdown-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold-light);
   opacity: 0.7;
 }
+/* Separators hidden — layout uses grid */
 .countdown-sep {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--gold);
-  opacity: 0.4;
-  align-self: center;
-  margin-top: -20px;
+  display: none;
 }
 
 /*SECTIONS*/
@@ -845,13 +842,6 @@ footer p {
   #countdown {
     padding: 60px 16px;
   }
-  .countdown-grid {
-    gap: 10px;
-  }
-  .countdown-num {
-    width: clamp(70px, 18vw, 100px);
-    height: clamp(70px, 18vw, 100px);
-  }
 
   /* Program timeline */
   .timeline-num  { width: 38px; height: 38px; font-size: 0.65rem; }
@@ -870,16 +860,7 @@ footer p {
 
 /* ── Small phone (≤ 480px) ── */
 @media (max-width: 480px) {
-  /* Countdown separators hidden; grid becomes 2×2 */
-  .countdown-sep {
-    display: none;
-  }
-  .countdown-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    justify-items: center;
-  }
+  /* Countdown separators already hidden globally */
 
   /* Hero buttons stack */
   .hero-btns {
@@ -902,18 +883,9 @@ footer p {
   .hero-time { letter-spacing: 0.1em; }
 
   /* Countdown boxes */
-  .countdown-box {
-    min-width: 0;
-    width: 100%;
-  }
-  .countdown-num {
-    width: 100%;
-    height: clamp(64px, 20vw, 90px);
-    font-size: clamp(1.8rem, 8vw, 2.8rem);
-  }
   .countdown-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
   }
 
   /* Program timeline — fine-tune sizes at 480px (layout already set at 600px) */
@@ -955,8 +927,7 @@ footer p {
   .hero-eighteen { font-size: clamp(3.2rem, 16vw, 5rem); }
 
   .countdown-num {
-    height: 58px;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .reminder-box { padding: 24px 14px; }
@@ -973,15 +944,7 @@ footer p {
   .divider      { margin: 12px auto; }
   .scroll-hint  { display: none; }
 
-  .countdown-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 8px;
-  }
-  .countdown-sep { display: flex; }
   .countdown-num {
-    width: clamp(56px, 12vw, 80px);
-    height: clamp(56px, 12vw, 80px);
     font-size: clamp(1.4rem, 4vw, 2rem);
   }
 }
