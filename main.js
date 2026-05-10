@@ -112,7 +112,7 @@ var modalData = {
       'Elizah Marie Zuniega',
       'Marial Angel Zuniega',
       'Mia Amor',
-      'Twiggy Maddella',
+      'Twiggy Maddela',
       'Kimberly Saluya',
       'Alyana Joy Fernandez',
       'Vanie Fe Bazar',
@@ -130,9 +130,9 @@ var modalData = {
   flowers: {
     label: '18 Flowers',
     names: [
-      'Mateo Al Roger Z. Loneza',
+      'Mateo Al Roger Loneza',
       'Ryl Adrino',
-      'James Venedict Z. Derecho',
+      'James Derecho',
       'Jeunir Zuniega',
       'Jesvir Zuniega',
       'Romulo Ray Balisnomo',
@@ -147,7 +147,7 @@ var modalData = {
       'Justin Arroco',
       'Daniel Arroco',
       'Francis Isles',
-      'Rogelio I. Loneza Jr. (Father)'
+      'Rogelio Loneza Jr. (Father)'
     ]
   },
   treasures: {
@@ -155,7 +155,7 @@ var modalData = {
     names: [
       'Rhianna Isabel Alfonso',
       'Ceriaco Nidea',
-      'Twiggy Madella',
+      'Twiggy Maddela',
       'Kimberly Saluya',
       'Yllelix Martin',
       'Nikka Dela Rama',
@@ -179,7 +179,7 @@ var modalData = {
       'Jesvir Zuniega',
       'Elizah Marie Zuniega',
       'Jeunir Zuniega',
-      'Myla and Joseph Deretcho',
+      'Myla and Joseph Derecho',
       'Lilet Abogado',
       'Lorabelle Pura',
       'Alvin and Mafi Zuniega',
