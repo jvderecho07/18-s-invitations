@@ -164,13 +164,13 @@ var modalData = {
       'Manu Andi Sapaula',
       'Shiela Lotivio',
       'Alyana Fernandez',
-      'Abigail Magno',
-      'Ate Hazel Brosas',
-      'Ate Mia Amor',
+      'Hazel Brosas',
+      'Mia Amor',
       'Paula Sotto',
       'Danielle Fay Marin',
       'Mary Kristin Arcos',
-      'Newzant Zebdee De Guzman'
+      'Newzant Zebdee De Guzman',
+      'Mavi Zuniega'
     ]
   },
   bluebills: {
