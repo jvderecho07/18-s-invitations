@@ -190,10 +190,10 @@ var modalData = {
       'Merli Ann Casile',
       'June Villavicencio',
       'Lovely Buisa-Adrino',
-      'Ivy Venofra',
+      'Ivy Pristine Denofra',
       'Joey and Ninang Joy',
       'Luke Arroyo',
-      'Mayen Mariaña'
+      'Mayen Maraña'
     ]
   },
   shots: {
